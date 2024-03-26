@@ -1,4 +1,4 @@
-package syrotiukDenys.domain;
+package syrotiuk.domain;
 
 import jakarta.persistence.*;
 

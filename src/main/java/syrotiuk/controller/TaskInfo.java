@@ -1,6 +1,6 @@
-package syrotiukDenys.controller;
+package syrotiuk.controller;
 
-import syrotiukDenys.domain.Status;
+import syrotiuk.domain.Status;
 
 public class TaskInfo {
     private String description;

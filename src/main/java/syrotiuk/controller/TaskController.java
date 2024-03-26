@@ -1,10 +1,10 @@
-package syrotiukDenys.controller;
+package syrotiuk.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import syrotiukDenys.domain.Task;
-import syrotiukDenys.service.TaskService;
+import syrotiuk.domain.Task;
+import syrotiuk.service.TaskService;
 
 import java.util.List;
 
