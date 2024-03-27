@@ -1,5 +1,6 @@
 package syrotiuk.dao;
 
+import syrotiuk.domain.Task;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -7,7 +8,6 @@ import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import syrotiuk.domain.Task;
 
 import java.util.List;
 

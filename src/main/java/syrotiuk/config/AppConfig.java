@@ -4,7 +4,6 @@ import com.zaxxer.hikari.HikariDataSource;
 import jakarta.persistence.EntityManagerFactory;
 import org.hibernate.cfg.Environment;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -21,7 +20,7 @@ public class AppConfig {
     public LocalSessionFactoryBean sessionFactoryBean() {
         LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
         sessionFactoryBean.setDataSource(dataSource());
-        sessionFactoryBean.setPackagesToScan("syrotiukDenys.domain");
+        sessionFactoryBean.setPackagesToScan("syrotiuk.domain");
         sessionFactoryBean.setHibernateProperties(hibernateProperties());
         return sessionFactoryBean;
     }
