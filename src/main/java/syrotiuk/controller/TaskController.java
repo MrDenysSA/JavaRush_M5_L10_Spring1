@@ -1,10 +1,10 @@
 package syrotiuk.controller;
 
+import syrotiuk.domain.Task;
+import syrotiuk.service.TaskService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import syrotiuk.domain.Task;
-import syrotiuk.service.TaskService;
 
 import java.util.List;
 
@@ -37,18 +37,18 @@ public class TaskController {
             throw new RuntimeException("Invalid id");
         }
 
-        Task task = taskService.edit(id, info.getDescription(), info.getStatus());
+        taskService.edit(id, info.getDescription(), info.getStatus());
         return tasks(model, 1,10);
     }
 
     @PostMapping("/")
     public String add(Model model,
                     @RequestBody TaskInfo info) {
-        Task task = taskService.create(info.getDescription(), info.getStatus());
+        taskService.create(info.getDescription(), info.getStatus());
         return tasks(model, 1,10);
     }
 
-    @PostMapping("/{id}")
+    @DeleteMapping("/{id}")
     public String delete(Model model,
                          @PathVariable Integer id) {
         if (isNull(id) || id <= 0) {
