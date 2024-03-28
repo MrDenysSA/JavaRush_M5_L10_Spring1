@@ -39,7 +39,7 @@ public class TaskController {
 
     @PostMapping("/{id}")
     public String edit(Model model,
-                       @PathVariable Integer id,
+                       @PathVariable("id") Integer id,
                        @RequestBody TaskInfo info) {
         if (isNull(id) || id <= 0) {
             throw new RuntimeException("Invalid id");
@@ -49,7 +49,7 @@ public class TaskController {
         return tasks(model, 1, 10);
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public String add(Model model,
                       @RequestBody TaskInfo info) {
         taskService.create(info.getDescription(), info.getStatus());
