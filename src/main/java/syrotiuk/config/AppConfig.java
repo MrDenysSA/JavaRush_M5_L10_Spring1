@@ -28,7 +28,7 @@ public class AppConfig {
     private Properties hibernateProperties() {
         Properties properties = new Properties();
         properties.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
-        properties.put(Environment.DRIVER,"com.p6spy.engine.spy.P6SpyDriver");
+        properties.put(Environment.DRIVER, "com.p6spy.engine.spy.P6SpyDriver");
         properties.put(Environment.HBM2DDL_AUTO, "validate");
         return properties;
     }
@@ -37,9 +37,10 @@ public class AppConfig {
     public DataSource dataSource() {
         HikariDataSource dataSource = new HikariDataSource();
         dataSource.setDriverClassName("com.p6spy.engine.spy.P6SpyDriver");
-        dataSource.setJdbcUrl("jdbc:p6spy:mysql://localhost:3306/todo");
+//        dataSource.setJdbcUrl("jdbc:p6spy:mysql://localhost:3306/todo"); // Local BD
+        dataSource.setJdbcUrl("jdbc:p6spy:mysql://db:3306/todo"); // Docker BD
         dataSource.setUsername("root");
-        dataSource.setPassword("Den23011990@");
+        dataSource.setPassword("root");
         dataSource.setMaximumPoolSize(10);
         return dataSource;
     }

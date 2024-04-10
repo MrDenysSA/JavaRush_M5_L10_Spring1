@@ -1,10 +1,10 @@
 package syrotiuk.controller;
 
-import syrotiuk.domain.Task;
-import syrotiuk.service.TaskService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import syrotiuk.domain.Task;
+import syrotiuk.service.TaskService;
 
 import java.util.List;
 import java.util.stream.Collectors;

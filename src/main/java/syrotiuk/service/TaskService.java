@@ -1,11 +1,11 @@
 package syrotiuk.service;
 
 
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import syrotiuk.dao.TaskDAO;
 import syrotiuk.domain.Status;
 import syrotiuk.domain.Task;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
