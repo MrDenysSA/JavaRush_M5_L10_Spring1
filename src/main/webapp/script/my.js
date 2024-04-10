@@ -1,9 +1,9 @@
 function delete_task(task_id) {
-    let url = "/" + task_id;
+    let url = getBaseUrl() + task_id;
     $.ajax({
         url: url,
         type: 'DELETE',
-        success: function() {
+        success: function () {
             window.location.reload();
         }
     });
@@ -44,23 +44,23 @@ function getDropdownStatusHtml(task_id) {
 }
 
 function update_task(task_id) {
-    let url = "/" + task_id;
+    let url = getBaseUrl() + task_id;
 
     let value_description = $("#input_description_" + task_id).val();
     let value_status = $("#select_status_" + task_id).val();
 
     $.ajax({
-       url: url,
-       type: 'POST',
-       dataType: 'json',
-       contentType: 'application/json;charset=UTF-8',
-       async: false,
-       data: JSON.stringify({"description": value_description, "status": value_status})
+        url: url,
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json;charset=UTF-8',
+        async: false,
+        data: JSON.stringify({"description": value_description, "status": value_status})
     });
 
     setTimeout(() => {
         document.location.reload();
-    },300);
+    }, 300);
 }
 
 function add_task() {
@@ -68,7 +68,7 @@ function add_task() {
     let value_status = $("#status_new").val();
 
     $.ajax({
-        url: "/",
+        url: getBaseUrl(),
         type: 'POST',
         dataType: 'json',
         contentType: 'application/json;charset=UTF-8',
@@ -78,5 +78,11 @@ function add_task() {
 
     setTimeout(() => {
         document.location.reload();
-    },300);
+    }, 300);
+}
+
+function getBaseUrl() {
+    let current_path = window.location.href;
+    let end_position = current_path.indexOf("?");
+    return current_path.substring(0, end_position);
 }

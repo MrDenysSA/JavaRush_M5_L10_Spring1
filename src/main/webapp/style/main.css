@@ -3,6 +3,7 @@ td, th {
     border: solid;
     color: black;
 }
+
 .active_page {
     color: rgba(255, 99, 71, 0.99);
 }
