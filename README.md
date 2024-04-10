@@ -22,7 +22,7 @@ cd project-spring-1
 ```bash
 docker-compose up --build
 ```
-5. After successful startup, open your web browser and go to http://localhost:8080/todo/ to see the application.
+5. After successful startup, open your web browser and go to http://localhost:8080/root/ to see the application.
 
 Info:
 Written on macOS Sonoma 14.4.1 (IntelCore i5, 16 Gb RAM)

@@ -13,8 +13,8 @@ services:
     ports:
       - '3306:3306'
     volumes:
-#      - my-db:/var/lib/mysql
-      - ./src/main/resources/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+#      - ./src/main/resources/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+      - my-db:/var/lib/mysql
     healthcheck:
       test: "/use/bin/mysql --user=root --password=root --execute \"SHOW DATABASES;\""
       interval: 5s
